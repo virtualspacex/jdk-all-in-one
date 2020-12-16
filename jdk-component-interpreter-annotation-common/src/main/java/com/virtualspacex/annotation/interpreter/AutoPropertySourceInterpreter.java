@@ -1,0 +1,80 @@
+/*
+ * @Author: your name
+ * @Date: 2020-10-11 14:02:32
+ * @LastEditTime: 2020-10-11 23:38:33
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /batch-container/src/main/java/com/fujielectric/batch/interpreter/AutoPropertySourceInterpreter.java
+ */
+package com.virtualspacex.annotation.interpreter;
+
+import java.io.File;
+
+import com.virtualspacex.middleware.annotation.InterpreterFor;
+import com.virtualspacex.middleware.aspect.AspectNode;
+import com.virtualspacex.middleware.exception.InterpreAnnotationException;
+import com.virtualspacex.middleware.interpreter.AnnotationInterpreterInterface;
+import com.virtualspacex.annotation.AutoPropertySource;
+import com.virtualspacex.annotation.SourceType;
+import com.virtualspacex.util.file.FileUtil;
+import com.virtualspacex.util.property.PropertiesReaderInterface;
+import com.virtualspacex.util.property.PropertyManager;
+
+import java.lang.annotation.Annotation;
+
+@InterpreterFor(AutoPropertySource.class)
+public class AutoPropertySourceInterpreter implements AnnotationInterpreterInterface {
+
+    @Override
+    public AspectNode enhanceBehaviour(AspectNode existNode, Annotation annotation) throws InterpreAnnotationException {
+        // TODO Auto-generated method stub
+        return existNode;
+    }
+
+    @Override
+    public Object enhanceAttribute(Class<?> clazz, Object existInstance, Annotation annotation)
+            throws InterpreAnnotationException {
+        AutoPropertySource autoPropertySource = (AutoPropertySource) annotation;
+        SourceType st = autoPropertySource.type();
+        if (st == SourceType.DB) {
+        	
+        	/* do By JDBC*/
+        	
+//            String table = autoPropertySource.table();
+//            String keyField = autoPropertySource.keyField();
+//            String valueField = autoPropertySource.valueField();
+//
+//            Session session = HibernateUtils.openSession();
+//
+//            if (null != session) {
+//                String sql = "SELECT " + keyField + "," + valueField + " FROM " + table;
+//                try {
+//                    SQLQuery query = session.createSQLQuery(sql);
+//                    List result = query.list();
+//                } catch (HibernateException e) {
+//                    throw new InterpreAnnotationException(e);
+//                }
+//            } else {
+//                throw new InterpreAnnotationException(" Can not connect to datebase.");
+//            }
+
+        } else if (st == SourceType.FILE) {
+            String propertyFile = FileUtil.getClassPath() + File.separator + autoPropertySource.filepath();
+            Class<?> readerClass = autoPropertySource.reader();
+            try {
+                PropertiesReaderInterface apr = (PropertiesReaderInterface) readerClass.newInstance();
+                apr.loadPropertyFile(propertyFile);
+                PropertyManager.add(apr);
+            } catch (Exception e) {
+                throw new InterpreAnnotationException(e);
+            }
+        }
+        return existInstance;
+    }
+
+	@Override
+	public boolean autoProxy(Annotation annotation) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+}
