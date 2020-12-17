@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<entry key="I-00001">{0}を開始しました。</entry>
+	<entry key="I-00002">{0}を終了しました。</entry>
+	<entry key="I-00003">{0}が終了していません。</entry>
+	<entry key="I-00004">{0}の登録処理に成功しました。{1}に{2}件登録しました。</entry>
+	<entry key="E-00012">本プロセスは既に実行中です。処理を終了します。</entry>
+	<entry key="E-00013">{0}の登録処理に失敗しました。対象テーブルは{1}です。メッセージ：{2}</entry>
+</properties>

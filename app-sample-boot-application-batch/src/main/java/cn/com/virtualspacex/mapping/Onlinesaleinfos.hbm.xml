@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="cn.com.fujielectric.model">
+    <class name="cn.com.fujielectric.model.Onlinesaleinfos" table="onlinesaleinfos">
+        <id name="id" column="id">
+            <generator class="native"/>
+        </id>
+        <property name="locationCode" column="location_code"/>
+        <property name="vmCode" column="vm_code"/>
+        <property name="posCode" column="pos_code"/>
+        <property name="rackNo" column="rack_no"/>
+        <property name="saleSerial" column="sale_serial"/>
+        <property name="goodCode" column="good_code"/>
+        <property name="hotcold" column="hotcold"/>
+        <property name="payment" column="payment"/>
+        <property name="salePrice" column="sale_price"/>
+        <property name="saleTime" column="sale_time"/>
+        <property name="systemTime" column="system_time"/>
+        <property name="isAggregated" column="is_aggregated"/>
+       <property name="createdAt" column="created_at"/>
+        <property name="updatedAt" column="updated_at"/>
+    </class>
+</hibernate-mapping>

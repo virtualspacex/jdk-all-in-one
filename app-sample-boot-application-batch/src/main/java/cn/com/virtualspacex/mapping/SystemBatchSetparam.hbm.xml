@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="cn.com.fujielectric.model">
+    <class name="cn.com.fujielectric.model.SystemBatchSetparam" table="system_batch_setparam">
+    	<composite-id>
+	        <key-property name="id" column="id"/>
+	        <key-property name="paramId" column="param_id"/>
+        </composite-id>
+        <property name="paramValue" column="param_value"/>
+    </class>
+</hibernate-mapping>
