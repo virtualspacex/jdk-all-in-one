@@ -43,6 +43,22 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/x
 					<target>1.8</target>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>2.5.5</version>
+				<configuration>
+					<!-- <archive>
+						<manifest>
+							<mainClass>com.xxg.Main</mainClass>
+						</manifest>
+					</archive> -->
+					<!-- <descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs> -->
+					<descriptor>src/main/assembly/assembly.xml</descriptor>
+				</configuration>
+			</plugin>
 		</plugins>
 		<resources>
 			<resource>
