@@ -6,7 +6,7 @@ import com.virtualspacex.batch.checker.Checker;
 import com.virtualspacex.batch.filter.AfterFilter;
 import com.virtualspacex.batch.filter.BeforeFilter;
 import com.virtualspacex.middleware.handler.EventHandlerInterface;
-import com.virtualspacex.util.database.DatabaseUtilInterface;
+// import com.virtualspacex.util.database.DatabaseUtilInterface;
 import com.virtualspacex.util.logger.AbstractLogger;
 
 public interface BatchConfigurationInterface {
@@ -17,7 +17,7 @@ public interface BatchConfigurationInterface {
 	
 	UncaughtExceptionHandler getUncaughtExceptionHandler();
 	
-	<C, T> DatabaseUtilInterface<C, T> getDatabaseUtil() throws Exception;
+	// <C, T> DatabaseUtilInterface<C, T> getDatabaseUtil() throws Exception;
 	
 	Checker getChecker();
 	

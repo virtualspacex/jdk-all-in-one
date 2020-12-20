@@ -16,7 +16,7 @@ import com.virtualspacex.middleware.exception.InterpreAnnotationException;
 import com.virtualspacex.middleware.interpreter.AnnotationInterpreterInterface;
 import com.virtualspacex.annotation.AutoPropertySource;
 import com.virtualspacex.annotation.SourceType;
-import com.virtualspacex.util.file.FileUtil;
+import com.virtualspacex.util.io.file.FileUtil;
 import com.virtualspacex.util.property.PropertiesReaderInterface;
 import com.virtualspacex.util.property.PropertyManager;
 

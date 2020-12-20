@@ -22,7 +22,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/x
         		
         <dependency>
             <groupId>com.virtualspacex.component</groupId>
-            <artifactId>database-annotation-interpreter</artifactId>
+            <artifactId>hibernate-database-annotation-interpreter</artifactId>
             <version>0.0.1</version>
         </dependency>
         

@@ -7,7 +7,7 @@ import com.virtualspacex.batch.job.AbstractJob;
 import com.virtualspacex.middleware.listener.EventCenter;
 import com.virtualspacex.middleware.loader.AnnotationEngine;
 import com.virtualspacex.util.common.CommonUtil;
-import com.virtualspacex.util.database.DatabaseUtilFactory;
+// import com.virtualspacex.util.database.DatabaseUtilFactory;
 import com.virtualspacex.util.logger.LoggerFactory;
 
 /**
@@ -112,7 +112,7 @@ public class BatchContainer {
     	EventCenter.register(BAT.SHUTDOWN, batchConfig.getShutdownListener());
     	Thread.setDefaultUncaughtExceptionHandler(batchConfig.getUncaughtExceptionHandler());
     	LoggerFactory.register(batchConfig.getLogger());
-    	DatabaseUtilFactory.register(batchConfig.getDatabaseUtil());
+    	// DatabaseUtilFactory.register(batchConfig.getDatabaseUtil());
     }
     
     private boolean doBeforeFilter() {

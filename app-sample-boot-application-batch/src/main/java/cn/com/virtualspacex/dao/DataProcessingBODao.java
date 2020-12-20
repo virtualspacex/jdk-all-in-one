@@ -4,9 +4,10 @@ import org.hibernate.Session;
 
 import cn.com.virtualspacex.model.bo.SaleinfosFromLastTimeBO;
 import cn.com.virtualspacex.tasks.properties.PropertiesManager;
-import cn.com.virtualspacex.utils.hibernate.HibernateDao;
 
 import java.util.List;
+
+import com.virtualspacex.component.hibernate.HibernateDao;
 
 public class DataProcessingBODao extends HibernateDao {
 

@@ -4,9 +4,10 @@ import org.hibernate.Session;
 
 import cn.com.virtualspacex.constants.Constant;
 import cn.com.virtualspacex.model.SystemBatchSetparam;
-import cn.com.virtualspacex.utils.hibernate.HibernateDao;
 
 import java.util.List;
+
+import com.virtualspacex.component.hibernate.HibernateDao;
 
 public class SystemBatchSetparamDao extends HibernateDao {
 

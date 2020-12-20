@@ -6,7 +6,7 @@ import org.apache.log4j.spi.LoggerFactory;
 
 import cn.com.virtualspacex.constants.Constant;
 
-import com.virtualspacex.util.file.FileUtil;
+import com.virtualspacex.util.io.file.FileUtil;
 import com.virtualspacex.util.property.XmlPropertiesReader;
 
 import java.io.File;

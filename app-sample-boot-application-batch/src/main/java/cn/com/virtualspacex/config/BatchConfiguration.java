@@ -12,17 +12,14 @@ import org.apache.log4j.PropertyConfigurator;
 import cn.com.virtualspacex.constants.Constant;
 import cn.com.virtualspacex.tasks.logger.Logger;
 import cn.com.virtualspacex.tasks.properties.PropertiesManager;
-import cn.com.virtualspacex.utils.hibernate.HibernateUtils;
 
 import com.virtualspacex.batch.checker.Checker;
 import com.virtualspacex.batch.configuration.DefaultBatchConfiguration;
 import com.virtualspacex.batch.configuration.Metadata;
-import com.virtualspacex.batch.constant.Constants;
 import com.virtualspacex.batch.filter.AfterFilter;
 import com.virtualspacex.batch.filter.BeforeFilter;
 import com.virtualspacex.middleware.handler.EventHandlerInterface;
-import com.virtualspacex.util.database.DatabaseUtilInterface;
-import com.virtualspacex.util.file.FileUtil;
+import com.virtualspacex.util.io.file.FileUtil;
 
 public class BatchConfiguration extends DefaultBatchConfiguration{
 

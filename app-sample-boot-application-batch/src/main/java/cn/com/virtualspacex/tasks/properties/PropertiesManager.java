@@ -6,12 +6,12 @@ import cn.com.virtualspacex.constants.Constant;
 import cn.com.virtualspacex.dao.SystemBatchSetparamDao;
 import cn.com.virtualspacex.model.SystemBatchSetparam;
 
-import com.virtualspacex.util.database.DatabaseUtilFactory;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import com.virtualspacex.component.hibernate.HibernateUtils;
 
 /**
  * @author zeng-zhuanghu
@@ -88,7 +88,7 @@ public class PropertiesManager {
     public boolean loadProperties() {
         Session session;
 		try {
-			session = (Session) DatabaseUtilFactory.connect();
+			session = (Session) HibernateUtils.openSession();
 		} catch (Exception e1) {
 			return false;
 		}
@@ -179,7 +179,7 @@ public class PropertiesManager {
             e.printStackTrace();
         } finally {
         	try {
-				DatabaseUtilFactory.disConnect(session);
+				HibernateUtils.closeSession(session);
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
