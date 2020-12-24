@@ -14,17 +14,17 @@ import com.virtualspacex.middleware.aspect.AspectNode;
 import com.virtualspacex.middleware.exception.InterpreAnnotationException;
 
 
-public class AnnotationInterpreterIntrpreterI implements AnnotationInterpreterInterface {
+public class AbstractAnnotationInterpreter implements AnnotationInterpreterInterface {
 
     @Override
     public AspectNode enhanceBehaviour(AspectNode existNode, Annotation annotation) throws InterpreAnnotationException {
-        return null;
+        return existNode;
     }
 
     @Override
     public Object enhanceAttribute(Class<?> clazz, Object existInstance, Annotation annotation)
             throws InterpreAnnotationException {
-        return null;
+        return existInstance;
     }
 
 	@Override

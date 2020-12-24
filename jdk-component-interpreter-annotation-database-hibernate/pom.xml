@@ -14,7 +14,13 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/x
             <groupId>com.virtualspacex.middleware</groupId>
             <artifactId>annotation-interpreter</artifactId>
             <version>0.0.1</version> 
-       </dependency>
+        </dependency>
+
+        <dependency>   
+	        <groupId>com.google.auto.service</groupId>
+            <artifactId>auto-service</artifactId>
+            <version>1.0-rc7</version>
+		</dependency>
         
 		<dependency>
             <groupId>com.virtualspacex.util</groupId>
