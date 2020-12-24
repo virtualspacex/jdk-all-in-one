@@ -1,8 +1,10 @@
 package cn.com.virtualspacex;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.ServiceLoader;
 
+import javax.annotation.processing.AbstractProcessor;
+import javax.annotation.processing.RoundEnvironment;
+import javax.lang.model.element.TypeElement;
 import javax.management.MalformedObjectNameException;
 
 import com.virtualspacex.annotation.BatchExecutor;
@@ -17,26 +19,17 @@ import cn.com.virtualspacex.tasks.SaleInfosSerialConfirmTask;
  * @author
  * @date 2020/11/09
  */
-@EnableJMXMonitor(port=7788)
+// @EnableJMXMonitor(port = 7788)
 @BatchExecutor(SaleInfosSerialConfirmTask.class)
 public class BatchApplication {
-    /**
-     * main方法
-     * @throws MalformedObjectNameException 
-     */
-    public static void main(String[] args) {
-    	A<? super BatchApplication> ab = new A<BatchApplication>();
-    	ab.add(new BatchApplication());
-    	List<Object> abc = new ArrayList<Object>();
-    	abc.add(new BatchApplication());
-    	Class<? extends Object> a = BatchApplication.class;
-		ApplicationBoot.run(BatchApplication.class);
-	}
+  /**
+   * main方法
+   * 
+   * @throws MalformedObjectNameException
+   */
+  public static void main(String[] args) {
+    // ServiceLoader.load(BatchApplication.class);
+    ApplicationBoot.run(BatchApplication.class);
+  }
 }
 
-class A<T extends Object>{
-	T t;
-	public void add(T tt) {
-		t = tt;
-	}
-}
