@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-10-10 14:04:30
- * @LastEditTime: 2020-10-11 23:54:48
+ * @LastEditTime: 2020-12-28 17:21:24
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /batch-container/src/main/java/com/fujielectric/engine/loader/FieldLoader.java
@@ -21,33 +21,30 @@ import com.virtualspacex.middleware.service.AnnotationInterpreService;
  * @date 2020/08/26
  * @since JDK8
  */
-class FieldLoader {
+class FieldInstanceCreator {
 
-	private FieldLoader() {
+	private FieldInstanceCreator() {
 		throw new IllegalStateException("Utility class");
 	}
 	
     public static void scanField(Class<?> clazz, Object instance) throws InterpreAnnotationException {
-	    Field[] fields = clazz.getDeclaredFields();
-	    for (Field field : fields) {
-	    	FieldLoader.load(field, instance);
+	    for (Field field : clazz.getDeclaredFields()) {
+	    	load(field, instance);
 	    }
     }
 
     private static void load(Field field, Object obj) throws InterpreAnnotationException{
-		Class<?> fieldClazz = field.getType();
-		
         Object fieldInstence = AnnotationInterpreService.interpretFromField(field);
 
-        if(null != fieldInstence ) {
-            field.setAccessible(true);
-            try {
-				field.set(obj, fieldInstence);
-			} catch (Exception e) {
-				throw new InterpreAnnotationException(e);
-			}
-            
-            scanField(fieldClazz, fieldInstence);
-        }
+		if(null == fieldInstence ) return;
+		
+		try {
+			field.setAccessible(true);
+			field.set(obj, fieldInstence);
+		} catch (Exception e) {
+			throw new InterpreAnnotationException(e);
+		}
+		
+		scanField(field.getType(), fieldInstence);
     }
 }

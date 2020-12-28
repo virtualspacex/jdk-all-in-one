@@ -29,14 +29,14 @@ public class SaleInfosSerialConfirmTask extends AbstractJob {
     @AutoLog
     private RequestMissedSerialStep requestMissedSerialStep;
     
-    @MBean
-    private BatchDynamicConfigutation config;
+    // @MBean
+    // private BatchDynamicConfigutation config;
 
     @Override
     public void execute() {
 
 //        //故障判断
-//    	StepResult<NULL> step1Result = masterTroubleConfirmStep.execute();
+   	StepResult<NULL> step1Result = masterTroubleConfirmStep.execute();
 //    	
 //    	if(step1Result.result()) {
 //    		//欠番检出及再要求处理

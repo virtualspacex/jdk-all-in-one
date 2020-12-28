@@ -6,7 +6,8 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/x
   <artifactId>annotation-interpreter</artifactId>
   <version>0.0.1</version>
   <packaging>jar</packaging>
-      <dependencies>
+
+    <dependencies>
 
 	    <dependency>
 			<groupId>org.reflections</groupId>
@@ -21,6 +22,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/x
         </dependency>
 			
     </dependencies>
+	
 	<build>
 		<plugins>
 			<plugin>

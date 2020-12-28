@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-10-10 14:04:02
- * @LastEditTime: 2020-10-12 00:00:36
+ * @LastEditTime: 2020-12-28 17:20:58
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /batch-container/src/main/java/com/fujielectric/engine/loader/ClassLoader.java
@@ -19,15 +19,15 @@ import com.virtualspacex.middleware.service.AnnotationInterpreService;
  * @date 2020/08/26
  * @since JDK8
  */
-class ClassLoader {
+class ClassInstanceCreator {
 
-	private ClassLoader() {
+	private ClassInstanceCreator() {
 		throw new IllegalStateException("Utility class");
 	}
 
     public static Object load(Class<?> clazz) throws InterpreAnnotationException{
     	Object instance = AnnotationInterpreService.interpretFromClass(clazz);
-    	FieldLoader.scanField(clazz, instance);
+    	FieldInstanceCreator.scanField(clazz, instance);
 	    return instance;
 	}
 }

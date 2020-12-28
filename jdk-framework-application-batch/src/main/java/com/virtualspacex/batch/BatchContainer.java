@@ -62,7 +62,8 @@ public class BatchContainer {
     		
     	} catch (Exception e) {
     		LoggerFactory.getLogger().error(CommonUtil.eToStackString(e));
-    		LoggerFactory.getLogger().error("Failed to load " + clazz.getSimpleName());
+			LoggerFactory.getLogger().error("Failed to load " + clazz.getSimpleName());
+			return;
     	}
     	
     	//打印版本信息
@@ -73,7 +74,8 @@ public class BatchContainer {
 	    	doConfig();
     	} catch (Exception e) {
     		LoggerFactory.getLogger().error(CommonUtil.eToStackString(e));
-    		LoggerFactory.getLogger().error("Failed to config " + clazz.getSimpleName());
+			LoggerFactory.getLogger().error("Failed to config " + clazz.getSimpleName());
+			return;
     	}
     	
     	//自检
@@ -97,6 +99,7 @@ public class BatchContainer {
         	}
 		} catch (Throwable e) {
 			LoggerFactory.getLogger().error(CommonUtil.eToStackString(e));
+			return;
 		} finally {
 			//发送结束事件
 			EventCenter.emit(BAT.SHUTDOWN);
