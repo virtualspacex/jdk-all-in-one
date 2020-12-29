@@ -1,7 +1,7 @@
 /*
  * @Author: keiki
  * @Date: 2020-12-21 10:39:58
- * @LastEditTime: 2020-12-29 11:38:46
+ * @LastEditTime: 2020-12-29 13:03:17
  * @LastEditors: keiki
  * @Description: 
  */
@@ -73,14 +73,19 @@ public class HttpUtils {
         return result.toString();
     }
 
-    public class HttpRequestEntity {
+    public static class HttpRequestEntity{
+        
         public String url;
 
-        public String method;
+        public String method = "GET";
 
-        public int connectTimeout;
+        public int connectTimeout = 60000;
 
-        public int readTimeout;
+        public int readTimeout = 60000;
+
+        public boolean allowUserInteraction = false;
+
+        public int chunkLength = -1;
     }
 
     public class HttpResponseEntity {

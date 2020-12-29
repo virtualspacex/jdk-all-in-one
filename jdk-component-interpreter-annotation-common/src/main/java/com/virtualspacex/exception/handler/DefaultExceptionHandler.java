@@ -28,7 +28,7 @@ public class DefaultExceptionHandler {
      * @param e 異常な
      * @since 0.0.1
      */
-    public void handle(Throwable e) {
+    public final void handle(Throwable e) {
         System.out.print(e.getClass().getName());
         Method method = invokeTable.get(e.getClass());
         try {
