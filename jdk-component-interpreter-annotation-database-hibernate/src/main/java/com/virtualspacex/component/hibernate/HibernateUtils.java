@@ -1,3 +1,11 @@
+/*
+ * @Author: your name
+ * @Date: 2020-12-21 10:39:58
+ * @LastEditTime: 2020-12-29 11:00:42
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \jdk-all-in-one\jdk-component-interpreter-annotation-database-hibernate\src\main\java\com\virtualspacex\component\hibernate\HibernateUtils.java
+ */
 package com.virtualspacex.component.hibernate;
 
 import java.io.File;
@@ -41,6 +49,8 @@ public class HibernateUtils{
 
         if (sessionFactory != null) {
             session = sessionFactory.openSession();
+        } else {
+            throw new Exception("failed to init org.hibernate.SessionFactory!");
         }
 
         return session;

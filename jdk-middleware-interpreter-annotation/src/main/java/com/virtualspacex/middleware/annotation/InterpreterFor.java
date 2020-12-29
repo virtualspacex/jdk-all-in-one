@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-10-11 19:27:19
- * @LastEditTime: 2020-12-14 22:55:20
+ * @LastEditTime: 2020-12-29 09:56:55
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /batch-container/src/main/java/com/fujielectric/batch/annotation/AnnotationInterpreter.java
@@ -19,6 +19,7 @@ import java.lang.annotation.RetentionPolicy;
 @Target({ ElementType.TYPE })
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
+@Deprecated
 public @interface InterpreterFor {
     Class<? extends Annotation>[] value();
 }

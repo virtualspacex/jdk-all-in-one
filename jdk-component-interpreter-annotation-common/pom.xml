@@ -1,27 +1,32 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" 
-xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-    
-  <groupId>com.virtualspacex.component</groupId>
-  <artifactId>common-annotation-interpreter</artifactId>
-  <version>0.0.1</version>
-  <packaging>jar</packaging>
-      <dependencies>
-		
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.virtualspacex.component</groupId>
+	<artifactId>common-annotation-interpreter</artifactId>
+	<version>0.0.1</version>
+	<packaging>jar</packaging>
+	<dependencies>
+
 		<dependency>
-            <groupId>com.virtualspacex.middleware</groupId>
+			<groupId>com.virtualspacex.middleware</groupId>
 			<artifactId>annotation-interpreter</artifactId>
-			<version>0.0.1</version> <!--版本号-->
- 		</dependency>
-        
+			<version>0.0.1</version>			<!--版本号-->
+		</dependency>
+
 		<dependency>
-            <groupId>com.virtualspacex.util</groupId>
-		    <artifactId>common</artifactId>
-		    <version>0.0.1</version	>
-        </dependency>
-        		
-    </dependencies>
+			<groupId>com.virtualspacex.util</groupId>
+			<artifactId>common</artifactId>
+			<version>0.0.1</version	>
+		</dependency>
+
+		<dependency>
+			<groupId>com.google.auto.service</groupId>
+			<artifactId>auto-service</artifactId>
+			<version>1.0-rc7</version>
+		</dependency>
+
+	</dependencies>
 	<build>
 		<plugins>
 			<plugin>

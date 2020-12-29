@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-10-10 16:16:38
- * @LastEditTime: 2020-10-11 23:37:41
+ * @LastEditTime: 2020-12-29 10:11:15
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /batch-container/src/main/java/com/fujielectric/batch/interpreter/AutoLogInterpreter.java
@@ -12,10 +12,13 @@ import com.virtualspacex.middleware.annotation.InterpreterFor;
 import com.virtualspacex.middleware.aspect.AspectNode;
 import com.virtualspacex.middleware.exception.InterpreAnnotationException;
 import com.virtualspacex.middleware.interpreter.AnnotationInterpreterInterface;
+import com.google.auto.service.AutoService;
 import com.virtualspacex.annotation.AutoLog;
 import com.virtualspacex.annotation.interpreter.aspects.LogAspect;
 
 import java.lang.annotation.Annotation;
+
+import javax.annotation.processing.SupportedAnnotationTypes;
 
 /**
  * 注釈分析
@@ -25,7 +28,9 @@ import java.lang.annotation.Annotation;
  * @date 2020/08/26
  * @since JDK8
  */
-@InterpreterFor(AutoLog.class)
+// @InterpreterFor(AutoLog.class)
+@AutoService({AnnotationInterpreterInterface.class})
+@SupportedAnnotationTypes({"com.virtualspacex.annotation.AutoLog"})
 public class AutoLogInterpreter implements AnnotationInterpreterInterface {
 
 	@Override

@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-10-10 16:16:20
- * @LastEditTime: 2020-10-11 23:36:46
+ * @LastEditTime: 2020-12-29 10:10:23
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /batch-container/src/main/java/com/fujielectric/batch/interpreter/AutoExceptionHandlerInterpreter.java
@@ -12,10 +12,13 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.HashMap;
 
+import javax.annotation.processing.SupportedAnnotationTypes;
+
 import com.virtualspacex.middleware.annotation.InterpreterFor;
 import com.virtualspacex.middleware.aspect.AspectNode;
 import com.virtualspacex.middleware.exception.InterpreAnnotationException;
 import com.virtualspacex.middleware.interpreter.AnnotationInterpreterInterface;
+import com.google.auto.service.AutoService;
 import com.virtualspacex.annotation.AutoExceptionHandler;
 import com.virtualspacex.annotation.ExceptionHandler;
 import com.virtualspacex.exception.handler.DefaultExceptionHandler;
@@ -30,7 +33,9 @@ import java.lang.annotation.Annotation;
  * @date 2020/08/26
  * @since JDK8
  */
-@InterpreterFor(AutoExceptionHandler.class)
+// @InterpreterFor(AutoExceptionHandler.class)
+@AutoService({AnnotationInterpreterInterface.class})
+@SupportedAnnotationTypes({"com.virtualspacex.annotation.AutoExceptionHandler"})
 public class AutoExceptionHandlerInterpreter implements AnnotationInterpreterInterface {
 
     @Override

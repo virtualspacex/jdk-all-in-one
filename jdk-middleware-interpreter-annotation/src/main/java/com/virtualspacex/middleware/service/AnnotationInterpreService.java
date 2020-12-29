@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-10-10 16:41:08
- * @LastEditTime: 2020-12-14 22:57:01
+ * @LastEditTime: 2020-12-29 09:45:21
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /batch-container/src/main/java/com/fujielectric/batch/service/AnnotationInterpreService.java
@@ -16,10 +16,10 @@ import com.virtualspacex.middleware.aspect.AspectNode;
 import com.virtualspacex.middleware.exception.InterpreAnnotationException;
 import com.virtualspacex.middleware.interpreter.AnnotationInterpreterInterface;
 import com.virtualspacex.middleware.loader.GlobalAspectNodeRegister;
-import com.virtualspacex.middleware.proxy.Proxy;
+import com.virtualspacex.middleware.proxy.AdvancedMethodInterceptor;
 import com.virtualspacex.middleware.proxy.ProxyBuilder;
-import com.virtualspacex.middleware.proxy.ProxyDecorator;
-import com.virtualspacex.middleware.proxy.ProxyFactory;
+import com.virtualspacex.middleware.proxy.MethodInterceptorDecorator;
+import com.virtualspacex.middleware.proxy.MethodInterceptorFactory;
 
 import net.sf.cglib.proxy.Callback;
 
@@ -79,8 +79,9 @@ public class AnnotationInterpreService {
 			throws InterpreAnnotationException {
 
 		Object ret = null;
-		AspectNode aspectode = GlobalAspectNodeRegister.getGlobalAspectNode();
 		boolean isNeedEnhance = false;
+		
+		AspectNode aspectode = GlobalAspectNodeRegister.getGlobalAspectNode();
 
 		//行为增强（面向类和属性）
 		for (Annotation anno : annotations) {
@@ -94,10 +95,10 @@ public class AnnotationInterpreService {
 		}
 
 		//生成实例
-		if(isNeedEnhance){
-			Proxy proxy = ProxyFactory.getProxy();
-			ProxyDecorator.addFunction(proxy, aspectode);
-			ret = ProxyBuilder.build(clazz, (Callback) proxy);
+		if(isNeedEnhance) {
+			AdvancedMethodInterceptor methodInterceptor = MethodInterceptorFactory.getMethodInterceptor();
+			MethodInterceptorDecorator.decorate(methodInterceptor, aspectode);
+			ret = ProxyBuilder.build(clazz, (Callback) methodInterceptor);
 		}
 
 		//增强实例属性

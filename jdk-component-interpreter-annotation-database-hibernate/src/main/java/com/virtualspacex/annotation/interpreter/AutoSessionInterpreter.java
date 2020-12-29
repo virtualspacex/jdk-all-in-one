@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-10-10 16:42:52
- * @LastEditTime: 2020-10-11 23:38:57
+ * @LastEditTime: 2020-12-29 10:41:36
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /batch-container/src/main/java/com/fujielectric/batch/interpreter/AutoSessionInterpreter.java
@@ -37,14 +37,13 @@ import javax.tools.Diagnostic.Kind;
  * @date 2020/08/26
  * @since JDK8
  */
-@InterpreterFor(AutoSession.class)
-@AutoService(Processor.class)
+// @InterpreterFor(AutoSession.class)
+@AutoService({AnnotationInterpreterInterface.class, Processor.class})
 @SupportedAnnotationTypes(value = "com.virtualspacex.annotation.AutoSession")
 public class AutoSessionInterpreter extends AbstractProcessor implements AnnotationInterpreterInterface {
 
 	@Override
 	public AspectNode enhanceBehaviour(AspectNode handler, Annotation annotation) throws InterpreAnnotationException {
-		// TODO Auto-generated method stub
 		AspectNode topHandler = new SessionAspect();
 		if (null != handler) {
 			topHandler.setNext(handler);
@@ -55,20 +54,18 @@ public class AutoSessionInterpreter extends AbstractProcessor implements Annotat
 	@Override
 	public Object enhanceAttribute(Class<?> clazz, Object existInstance, Annotation annotation)
 			throws InterpreAnnotationException {
-		// TODO Auto-generated method stub
 		return existInstance;
 	}
 
 	@Override
 	public boolean autoProxy(Annotation annotation) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
 	public boolean process(Set<? extends TypeElement> annotations, RoundEnvironment roundEnv) {
 		Messager messager = processingEnv.getMessager();
-        messager.printMessage(Kind.ERROR, "=================Check Session By @AutoSession==============");
+        messager.printMessage(Kind.NOTE, "=================Check Session By @AutoSession==============");
 		return false;
 	}
 }

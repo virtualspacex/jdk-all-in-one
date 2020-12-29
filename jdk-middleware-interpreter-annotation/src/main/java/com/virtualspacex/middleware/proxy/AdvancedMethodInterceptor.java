@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-10-10 16:15:18
- * @LastEditTime: 2020-12-14 22:57:35
+ * @LastEditTime: 2020-12-29 09:37:45
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /batch-container/src/main/java/com/fujielectric/batch/proxy/factory/Proxy.java
@@ -25,7 +25,7 @@ import com.virtualspacex.middleware.service.AnnotationInterpreService;
  * @date 2020/08/26
  * @since JDK8
  */
-public class Proxy implements MethodInterceptor {
+public class AdvancedMethodInterceptor implements MethodInterceptor {
 
     private AspectNode classHandlers;
 

@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-10-10 16:15:52
- * @LastEditTime: 2020-12-14 22:57:42
+ * @LastEditTime: 2020-12-29 09:43:54
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /batch-container/src/main/java/com/fujielectric/batch/proxy/factory/ProxyDecorator.java
@@ -20,9 +20,9 @@ import com.virtualspacex.middleware.aspect.AspectNode;
  * @date 2020/08/26
  * @since JDK8
  */
-public class ProxyDecorator {
+public class MethodInterceptorDecorator {
 
-    private ProxyDecorator() {
+    private MethodInterceptorDecorator() {
         throw new IllegalStateException("Utility class");
     }
       
@@ -34,7 +34,7 @@ public class ProxyDecorator {
      * @return プロキシオブジェクト
      * @since 0.0.1
      */
-    public static Proxy addFunction(Proxy proxy, AspectNode handler) {
+    public static AdvancedMethodInterceptor decorate(AdvancedMethodInterceptor proxy, AspectNode handler) {
     	proxy.push(handler);
         return proxy;
     }

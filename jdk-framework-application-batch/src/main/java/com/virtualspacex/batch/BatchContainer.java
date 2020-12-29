@@ -5,7 +5,7 @@ import com.virtualspacex.batch.constant.Constants;
 import com.virtualspacex.batch.event.BAT;
 import com.virtualspacex.batch.job.AbstractJob;
 import com.virtualspacex.middleware.listener.EventCenter;
-import com.virtualspacex.middleware.loader.AnnotationEngine;
+import com.virtualspacex.middleware.loader.AdvancedInstanceCreator;
 import com.virtualspacex.util.common.CommonUtil;
 // import com.virtualspacex.util.database.DatabaseUtilFactory;
 import com.virtualspacex.util.logger.LoggerFactory;
@@ -52,7 +52,7 @@ public class BatchContainer {
     	AbstractJob task = null;
     	
     	try {
-    		task = (AbstractJob) AnnotationEngine.loadClass(clazz);
+    		task = (AbstractJob) AdvancedInstanceCreator.from(clazz);
     		
     		if (null == task) 
     			throw new Exception();

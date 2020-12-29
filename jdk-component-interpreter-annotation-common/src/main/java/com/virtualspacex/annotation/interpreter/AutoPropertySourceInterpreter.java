@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-10-11 14:02:32
- * @LastEditTime: 2020-10-11 23:38:33
+ * @LastEditTime: 2020-12-29 10:12:10
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /batch-container/src/main/java/com/fujielectric/batch/interpreter/AutoPropertySourceInterpreter.java
@@ -14,6 +14,7 @@ import com.virtualspacex.middleware.annotation.InterpreterFor;
 import com.virtualspacex.middleware.aspect.AspectNode;
 import com.virtualspacex.middleware.exception.InterpreAnnotationException;
 import com.virtualspacex.middleware.interpreter.AnnotationInterpreterInterface;
+import com.google.auto.service.AutoService;
 import com.virtualspacex.annotation.AutoPropertySource;
 import com.virtualspacex.annotation.SourceType;
 import com.virtualspacex.util.io.file.FileUtil;
@@ -22,7 +23,11 @@ import com.virtualspacex.util.property.PropertyManager;
 
 import java.lang.annotation.Annotation;
 
-@InterpreterFor(AutoPropertySource.class)
+import javax.annotation.processing.SupportedAnnotationTypes;
+
+// @InterpreterFor(AutoPropertySource.class)
+@AutoService({AnnotationInterpreterInterface.class})
+@SupportedAnnotationTypes({"com.virtualspacex.annotation.AutoPropertySource"})
 public class AutoPropertySourceInterpreter implements AnnotationInterpreterInterface {
 
     @Override
