@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-10-10 14:04:02
- * @LastEditTime: 2020-12-28 17:20:58
+ * @LastEditTime: 2020-12-28 19:39:48
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /batch-container/src/main/java/com/fujielectric/engine/loader/ClassLoader.java
@@ -27,7 +27,7 @@ class ClassInstanceCreator {
 
     public static Object load(Class<?> clazz) throws InterpreAnnotationException{
     	Object instance = AnnotationInterpreService.interpretFromClass(clazz);
-    	FieldInstanceCreator.scanField(clazz, instance);
+    	FieldInstanceCreator.newInstanceForField(clazz, instance);
 	    return instance;
 	}
 }
