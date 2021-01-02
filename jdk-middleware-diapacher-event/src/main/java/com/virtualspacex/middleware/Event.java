@@ -1,3 +1,10 @@
+/*
+ * @Author: keiki
+ * @Date: 2020-12-16 23:28:54
+ * @LastEditTime: 2021-01-01 15:52:16
+ * @LastEditors: keiki
+ * @Description: 
+ */
 // package com.virtualspacex.middleware;
 
 // public class Event implements Comparable<Event> {
@@ -14,7 +21,6 @@
 
 //     @Override
 //     public int compareTo(Event o) {
-//         // TODO Auto-generated method stub
 //         return 0;
 //     }
 

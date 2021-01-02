@@ -1,8 +1,8 @@
 /*
  * @Author: your name
  * @Date: 2020-10-10 16:16:20
- * @LastEditTime: 2020-12-29 10:10:23
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2021-01-01 15:32:33
+ * @LastEditors: keiki
  * @Description: In User Settings Edit
  * @FilePath: /batch-container/src/main/java/com/fujielectric/batch/interpreter/AutoExceptionHandlerInterpreter.java
  */
@@ -14,12 +14,10 @@ import java.util.HashMap;
 
 import javax.annotation.processing.SupportedAnnotationTypes;
 
-import com.virtualspacex.middleware.annotation.InterpreterFor;
 import com.virtualspacex.middleware.aspect.AspectNode;
 import com.virtualspacex.middleware.exception.InterpreAnnotationException;
 import com.virtualspacex.middleware.interpreter.AnnotationInterpreterInterface;
 import com.google.auto.service.AutoService;
-import com.virtualspacex.annotation.AutoExceptionHandler;
 import com.virtualspacex.annotation.ExceptionHandler;
 import com.virtualspacex.exception.handler.DefaultExceptionHandler;
 
@@ -40,7 +38,6 @@ public class AutoExceptionHandlerInterpreter implements AnnotationInterpreterInt
 
     @Override
     public AspectNode enhanceBehaviour(AspectNode handler, Annotation annotation) throws InterpreAnnotationException {
-        // TODO Auto-generated method stub
         return handler;
     }
 
@@ -55,7 +52,7 @@ public class AutoExceptionHandlerInterpreter implements AnnotationInterpreterInt
 
             while (!(DefaultExceptionHandler.class.getName().equals(targetClass.getName()))) {
                 targetClass = targetClass.getSuperclass();
-                if (Object.class.equals(targetClass.getName())) {
+                if (Object.class.equals(targetClass)) {
                     break;
                 }
             }

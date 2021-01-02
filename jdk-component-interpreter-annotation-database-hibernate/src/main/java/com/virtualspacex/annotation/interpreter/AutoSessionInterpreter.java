@@ -1,19 +1,17 @@
 /*
  * @Author: your name
  * @Date: 2020-10-10 16:42:52
- * @LastEditTime: 2020-12-29 10:41:36
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2021-01-01 15:34:22
+ * @LastEditors: keiki
  * @Description: In User Settings Edit
  * @FilePath: /batch-container/src/main/java/com/fujielectric/batch/interpreter/AutoSessionInterpreter.java
  */
 package com.virtualspacex.annotation.interpreter;
 
-import com.virtualspacex.middleware.annotation.InterpreterFor;
 import com.virtualspacex.middleware.aspect.AspectNode;
 import com.virtualspacex.middleware.exception.InterpreAnnotationException;
 import com.virtualspacex.middleware.interpreter.AnnotationInterpreterInterface;
 import com.google.auto.service.AutoService;
-import com.virtualspacex.annotation.AutoSession;
 import com.virtualspacex.annotation.interpreter.aspects.SessionAspect;
 
 import java.lang.annotation.Annotation;
@@ -24,8 +22,6 @@ import javax.annotation.processing.Messager;
 import javax.annotation.processing.Processor;
 import javax.annotation.processing.RoundEnvironment;
 import javax.annotation.processing.SupportedAnnotationTypes;
-import javax.annotation.processing.SupportedSourceVersion;
-import javax.lang.model.SourceVersion;
 import javax.lang.model.element.TypeElement;
 import javax.tools.Diagnostic.Kind;
 

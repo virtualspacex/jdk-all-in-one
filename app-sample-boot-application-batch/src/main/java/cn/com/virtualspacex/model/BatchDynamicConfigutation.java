@@ -1,3 +1,10 @@
+/*
+ * @Author: keiki
+ * @Date: 2020-12-20 12:47:32
+ * @LastEditTime: 2021-01-01 15:49:14
+ * @LastEditors: keiki
+ * @Description: 
+ */
 package cn.com.virtualspacex.model;
 
 import java.util.HashMap;
@@ -20,7 +27,6 @@ public class BatchDynamicConfigutation implements BatchDynamicConfigutationMBean
 
 	@Override
 	public Map<String, String> getA() {
-		// TODO Auto-generated method stub
 		return a;
 	}
 
@@ -31,7 +37,6 @@ public class BatchDynamicConfigutation implements BatchDynamicConfigutationMBean
 
 	@Override
 	public String getB() {
-		// TODO Auto-generated method stub
 		return b;
 	}
 	

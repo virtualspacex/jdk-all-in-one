@@ -1,14 +1,15 @@
+/*
+ * @Author: keiki
+ * @Date: 2020-12-24 20:56:56
+ * @LastEditTime: 2021-01-01 15:25:27
+ * @LastEditors: keiki
+ * @Description: 
+ */
 package cn.com.virtualspacex;
 
-import java.util.ServiceLoader;
-
-import javax.annotation.processing.AbstractProcessor;
-import javax.annotation.processing.RoundEnvironment;
-import javax.lang.model.element.TypeElement;
 import javax.management.MalformedObjectNameException;
 
 import com.virtualspacex.annotation.BatchExecutor;
-import com.virtualspacex.annotation.EnableJMXMonitor;
 import com.virtualspacex.boot.ApplicationBoot;
 
 import cn.com.virtualspacex.tasks.SaleInfosSerialConfirmTask;
@@ -28,7 +29,6 @@ public class BatchApplication {
    * @throws MalformedObjectNameException
    */
   public static void main(String[] args) {
-    // ServiceLoader.load(BatchApplication.class);
     ApplicationBoot.run(BatchApplication.class);
   }
 }

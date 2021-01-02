@@ -50,7 +50,7 @@ public class Logger {
     /**
      * Retrieve the appropriate {@link org.apache.log4j.Logger} instance.
      */
-    public static Logger getLogger(Class clazz) {
+    public static Logger getLogger(Class<?> clazz) {
         if (null == self) {
             self = new Logger();
         }
@@ -133,17 +133,6 @@ public class Logger {
     }
 
     /**
-     * info
-     *
-     * @param message the message object to log
-     * @param t       the exception to log, including its stack trace.
-     * @see org.apache.log4j.Logger#info(Object, Throwable)
-     */
-    private void info(Object message, Throwable t) {
-        logger.info("," + Constant.FUNCTION_SYMBOL + "," + Constant.TASK_ID + "," + message, t);
-    }
-
-    /**
      * Log a message object with the {@link Level#DEBUG DEBUG} level.
      *
      * <p>This method first checks if this category is <code>DEBUG</code>
@@ -164,40 +153,5 @@ public class Logger {
      */
     private void debug(Object message) {
         logger.debug("," + Constant.FUNCTION_SYMBOL + "," + Constant.TASK_ID + "," + message);
-    }
-
-    /**
-     * Log a message object with the <code>DEBUG</code> level including
-     * the stack trace of the {@link Throwable} <code>t</code> passed as
-     * parameter.
-     *
-     * <p>See {@link #debug(Object)} form for more detailed information.
-     *
-     * @param message the message object to log.
-     * @param t       the exception to log, including its stack trace.
-     */
-    private void debug(Object message, Throwable t) {
-        logger.debug("," + Constant.FUNCTION_SYMBOL + "," + Constant.TASK_ID + "," + message, t);
-    }
-
-    /**
-     * error
-     *
-     * @param message the message object to log
-     * @see org.apache.log4j.Logger#error(Object)
-     */
-    private void error(Object message) {
-        logger.error("," + Constant.FUNCTION_SYMBOL + "," + Constant.TASK_ID + "," + message);
-    }
-
-    /**
-     * error
-     *
-     * @param message the message object to log
-     * @param t       the exception to log, including its stack trace.
-     * @see org.apache.log4j.Logger#error(Object, Throwable)
-     */
-    private void error(Object message, Throwable t) {
-        logger.error("," + Constant.FUNCTION_SYMBOL + "," + Constant.TASK_ID + "," + message, t);
     }
 }

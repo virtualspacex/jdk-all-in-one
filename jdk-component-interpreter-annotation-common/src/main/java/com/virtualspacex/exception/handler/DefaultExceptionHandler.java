@@ -1,3 +1,10 @@
+/*
+ * @Author: keiki
+ * @Date: 2020-12-16 23:28:54
+ * @LastEditTime: 2021-01-01 15:49:30
+ * @LastEditors: keiki
+ * @Description: 
+ */
 package com.virtualspacex.exception.handler;
 
 import static com.virtualspacex.util.logger.LoggerFactory.*;
@@ -38,13 +45,10 @@ public class DefaultExceptionHandler {
                 throwable(e);
             }
         } catch (IllegalAccessException e1) {
-            // TODO Auto-generated catch block
             e1.printStackTrace();
         } catch (IllegalArgumentException e1) {
-            // TODO Auto-generated catch block
             e1.printStackTrace();
         } catch (InvocationTargetException e1) {
-            // TODO Auto-generated catch block
             e1.printStackTrace();
         }
     }

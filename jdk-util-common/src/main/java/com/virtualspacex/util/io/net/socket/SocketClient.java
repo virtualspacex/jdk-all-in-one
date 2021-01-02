@@ -1,7 +1,7 @@
 /*
  * @Author: keiki
  * @Date: 2020-12-29 11:41:41
- * @LastEditTime: 2020-12-29 12:57:51
+ * @LastEditTime: 2021-01-01 15:43:58
  * @LastEditors: keiki
  * @Description: 
  */
@@ -67,5 +67,7 @@ public class SocketClient {
             }
         }
         socket.close();
+
+        sc.close();
     }
 }

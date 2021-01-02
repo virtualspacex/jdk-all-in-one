@@ -1,3 +1,10 @@
+/*
+ * @Author: keiki
+ * @Date: 2020-12-20 12:47:32
+ * @LastEditTime: 2021-01-01 15:31:10
+ * @LastEditors: keiki
+ * @Description: 
+ */
 package cn.com.virtualspacex.utils;
 
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -8,8 +15,6 @@ import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.message.BasicHeader;
 
 import cn.com.virtualspacex.constants.Constant;
-
-import java.io.IOException;
 
 /**
  * 处理请求

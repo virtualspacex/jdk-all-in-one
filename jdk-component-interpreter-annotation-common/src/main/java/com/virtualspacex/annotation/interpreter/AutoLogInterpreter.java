@@ -1,19 +1,17 @@
 /*
  * @Author: your name
  * @Date: 2020-10-10 16:16:38
- * @LastEditTime: 2020-12-29 10:11:15
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2021-01-01 15:33:10
+ * @LastEditors: keiki
  * @Description: In User Settings Edit
  * @FilePath: /batch-container/src/main/java/com/fujielectric/batch/interpreter/AutoLogInterpreter.java
  */
 package com.virtualspacex.annotation.interpreter;
 
-import com.virtualspacex.middleware.annotation.InterpreterFor;
 import com.virtualspacex.middleware.aspect.AspectNode;
 import com.virtualspacex.middleware.exception.InterpreAnnotationException;
 import com.virtualspacex.middleware.interpreter.AnnotationInterpreterInterface;
 import com.google.auto.service.AutoService;
-import com.virtualspacex.annotation.AutoLog;
 import com.virtualspacex.annotation.interpreter.aspects.LogAspect;
 
 import java.lang.annotation.Annotation;

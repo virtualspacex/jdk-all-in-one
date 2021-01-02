@@ -1,19 +1,28 @@
+/*
+ * @Author: keiki
+ * @Date: 2020-12-16 23:28:54
+ * @LastEditTime: 2021-01-01 15:38:48
+ * @LastEditors: keiki
+ * @Description: 
+ */
 package com.virtualspacex.annotation.interpreter;
 
 import java.lang.annotation.Annotation;
 
-import com.virtualspacex.annotation.MBean;
-import com.virtualspacex.middleware.annotation.InterpreterFor;
+import javax.annotation.processing.SupportedAnnotationTypes;
+
+import com.google.auto.service.AutoService;
 import com.virtualspacex.middleware.aspect.AspectNode;
 import com.virtualspacex.middleware.exception.InterpreAnnotationException;
 import com.virtualspacex.middleware.interpreter.AnnotationInterpreterInterface;
 import com.virtualspacex.monitor.JmxMonitor;
 
-@InterpreterFor(MBean.class)
+// @InterpreterFor(MBean.class)
+@AutoService({AnnotationInterpreterInterface.class})
+@SupportedAnnotationTypes(value = "com.virtualspacex.annotation.MBean")
 public class MBeanInterpreter implements AnnotationInterpreterInterface{
 
 	public AspectNode enhanceBehaviour(AspectNode existNode, Annotation annotation) throws InterpreAnnotationException {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
@@ -35,7 +44,6 @@ public class MBeanInterpreter implements AnnotationInterpreterInterface{
 	}
 
 	public boolean autoProxy(Annotation annotation) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 

@@ -1,8 +1,8 @@
 /*
  * @Author: your name
  * @Date: 2020-10-11 14:02:32
- * @LastEditTime: 2020-12-29 10:12:10
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2021-01-01 15:33:43
+ * @LastEditors: keiki
  * @Description: In User Settings Edit
  * @FilePath: /batch-container/src/main/java/com/fujielectric/batch/interpreter/AutoPropertySourceInterpreter.java
  */
@@ -10,7 +10,6 @@ package com.virtualspacex.annotation.interpreter;
 
 import java.io.File;
 
-import com.virtualspacex.middleware.annotation.InterpreterFor;
 import com.virtualspacex.middleware.aspect.AspectNode;
 import com.virtualspacex.middleware.exception.InterpreAnnotationException;
 import com.virtualspacex.middleware.interpreter.AnnotationInterpreterInterface;
@@ -32,7 +31,6 @@ public class AutoPropertySourceInterpreter implements AnnotationInterpreterInter
 
     @Override
     public AspectNode enhanceBehaviour(AspectNode existNode, Annotation annotation) throws InterpreAnnotationException {
-        // TODO Auto-generated method stub
         return existNode;
     }
 
@@ -79,7 +77,6 @@ public class AutoPropertySourceInterpreter implements AnnotationInterpreterInter
 
 	@Override
 	public boolean autoProxy(Annotation annotation) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 }

@@ -6,7 +6,6 @@ import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.LinkedTransferQueue;
-import java.util.concurrent.PriorityBlockingQueue;
 import java.util.concurrent.ThreadFactory;
 
 import com.virtualspacex.middleware.handler.EventHandlerInterface;

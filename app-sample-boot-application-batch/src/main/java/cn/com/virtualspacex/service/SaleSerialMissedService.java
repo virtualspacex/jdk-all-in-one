@@ -121,7 +121,7 @@ public class SaleSerialMissedService {
     public <T> ServiceResult<T> decreaseRetryTimes(int id, @AutoSession Session session) {
         ServiceResult<T> serviceResult = new ServiceResult<>();
         try {
-            Integer i = saleSerialMissedDao.decreaseRetryTimes(session, String.valueOf(id));
+            saleSerialMissedDao.decreaseRetryTimes(session, String.valueOf(id));
             serviceResult.setResult(true);
         } catch (Throwable e) {
             Logger.getLogger(Constant.LOGGER_TASK).msg(Constant.MESSAGE_E_00013, Arrays.asList(Constant.TASK_NAME, PropertiesManager.SALE_SERIAL_MISSED_TABLENAME, e.getMessage()));

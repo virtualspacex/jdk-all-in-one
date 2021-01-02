@@ -16,7 +16,6 @@ import com.virtualspacex.annotation.AutoLog;
 import com.virtualspacex.batch.step.AbstractStep;
 import com.virtualspacex.batch.step.StepResult;
 import com.virtualspacex.util.entity.NULL;
-import com.sun.javafx.binding.StringFormatter;
 
 import cn.com.virtualspacex.constants.Constant;
 import cn.com.virtualspacex.exception.BatchExceptionHandler;
@@ -67,7 +66,7 @@ public class RequestMissedSerialStep extends AbstractStep {
             stepResult.setResult(true);
             return stepResult;
         } else {
-            Logger.getLogger(Constant.LOGGER_TASK).msg(StringFormatter.format(Constant.FORMATTER, Constant.QUERY_SALESERIA_LMISSED).getValue() + StringFormatter.format(Constant.QUERY_SUCCESS, listServiceResult.value().size()).getValue());
+            Logger.getLogger(Constant.LOGGER_TASK).msg(String.format(Constant.FORMATTER, Constant.QUERY_SALESERIA_LMISSED) + String.format(Constant.QUERY_SUCCESS, listServiceResult.value().size()));
         }
 
         //登录认证获取token
@@ -135,7 +134,7 @@ public class RequestMissedSerialStep extends AbstractStep {
         Logger.getLogger(Constant.LOGGER_TASK).msg(Constant.RETRY_NUMBER_MSG + retryNumber);
         Logger.getLogger(Constant.LOGGER_TASK).msg(Constant.MESSAGE_I_00004, Arrays.asList(Constant.TASK_NAME, PropertiesManager.SALE_SERIAL_MISSED_TABLENAME, Integer.valueOf(retryNumber).toString()));
 
-        for (Future f : resultList) {
+        for (Future<Boolean> f : resultList) {
             try {
                 f.get();
             } catch (Throwable e) {

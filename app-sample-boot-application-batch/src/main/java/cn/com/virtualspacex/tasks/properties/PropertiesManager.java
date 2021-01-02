@@ -181,7 +181,6 @@ public class PropertiesManager {
         	try {
 				HibernateUtils.closeSession(session);
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
         }
